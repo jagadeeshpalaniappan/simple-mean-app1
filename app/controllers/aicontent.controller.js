@@ -2,6 +2,14 @@ angular.module("app").controller("aiContentCtrl", function ($scope, aiContentSer
     $scope.aiContents = [];
     $scope.IsSubmit = false;
 
+    $scope.tags = [
+        { text: 'just' },
+        { text: 'some' },
+        { text: 'cool' },
+        { text: 'tags' }
+    ];
+
+
     if ($state.current.name == "aicontents") {
         
         aiContentService.getAiContents().then(function (response) {

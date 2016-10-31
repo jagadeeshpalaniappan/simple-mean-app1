@@ -1,7 +1,8 @@
-
-<a ui-sref="create" class="btn btn-primary pull-right">Add Content</a>
-
 <h2>AI -Content List</h2>
+
+
+<!--
+
 <table class="table">
     <tr>
         <th>Name</th>
@@ -19,3 +20,66 @@
         </td>
     </tr>
 </table>
+
+-->
+
+<div class="row">
+    <div class="col-sm-8">
+
+        <a ui-sref="create" class="btn btn-primary pull-right">
+            <span class="glyphicon glyphicon-plus"></span> &nbsp; Add Content
+        </a>
+        <br/>
+        <br/>
+        <br/>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+
+
+        <div class="panel panel-white post panel-shadow" ng-repeat="aiContent in aiContents">
+            <div class="post-heading">
+                <div class="pull-left image">
+                    <img src="./assets/img/teamspaceicon.png" class="img-circle avatar"
+                         alt="user profile image">
+                </div>
+                <div class="pull-left meta">
+                    <div class="title h5">
+                        <b>{{aiContent.name}}</b>
+                    </div>
+                    <h6 class="text-muted time">Created at {{aiContent.createdAt | date}}</h6>
+                </div>
+
+                <div class="pull-right">
+                    <a ui-sref="edit({id:aiContent._id})">Edit</a> |
+                    <a href="#" ng-click="deleteAiContent(aiContent._id)">Delete</a>
+                </div>
+            </div>
+            <div class="post-description">
+                <p>{{aiContent.content}}</p>
+
+                <div class="stats">
+
+                    <span class="label label-default" ng-repeat="keyword in aiContent.keywords">{{keyword.text}}</span>
+
+
+                    <!--
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-thumbs-up icon"></i>2
+                    </a>
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-thumbs-down icon"></i>12
+                    </a>
+
+                    -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

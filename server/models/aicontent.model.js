@@ -9,11 +9,16 @@ var connection = require("../config/db");
 //autoIncrement.initialize(connection);
 
 var aiContentSchema = new Schema({
-    //_id: {type: Number, required: true, unique: true}, //you can skip it with auto increment
-    name: {type: String, required: true},
-    keywords: {type: String, required: true},
-    content: {type: String, required: true}
-});
+        //_id: {type: Number, required: true, unique: true}, //you can skip it with auto increment
+        name: {type: String, required: true},
+        keywords: [{
+            text: {type: String, required: true}
+        }],
+        content: {type: String, required: true}
+    },
+    {
+        timestamps: true
+    });
 
 
 //aiContentSchema.plugin(autoIncrement.plugin, 'AiContents');
