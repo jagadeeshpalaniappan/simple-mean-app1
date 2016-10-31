@@ -1,0 +1,21 @@
+
+<a ui-sref="create" class="btn btn-primary pull-right">Add Content</a>
+
+<h2>AI -Content List</h2>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Keywords</th>
+        <th>Content</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="aiContent in aiContents">
+        <td>{{aiContent.name}}</td>
+        <td>{{aiContent.keywords}}</td>
+        <td>{{aiContent.content}}</td>
+        <td>
+            <a ui-sref="edit({id:aiContent._id})">Edit</a> |
+            <a href="#" ng-click="deleteAiContent(aiContent._id)">Delete</a>
+        </td>
+    </tr>
+</table>
