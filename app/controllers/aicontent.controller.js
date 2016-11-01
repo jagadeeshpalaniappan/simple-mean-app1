@@ -10,7 +10,7 @@ angular.module("app").controller("aiContentCtrl", function ($scope, aiContentSer
     ];
 
 
-    if ($state.current.name == "aicontents") {
+    if ($state.current.name == "ai.list") {
         
         aiContentService.getAiContents().then(function (response) {
                 $scope.aiContents=response;
@@ -29,7 +29,7 @@ angular.module("app").controller("aiContentCtrl", function ($scope, aiContentSer
                 aiContentService.updateAiContent(aiContent).success(function (data) {
                     console.log(data);
                     if (data == "updated") {
-                        $state.go("aicontents");
+                        $state.go("ai.list");
                     }
                 }).error(function (err) {
                     console.log(err);
@@ -37,7 +37,7 @@ angular.module("app").controller("aiContentCtrl", function ($scope, aiContentSer
             } else {
                 aiContentService.createAiContent(aiContent).success(function (data) {
                     if (data == "added") {
-                        $state.go("aicontents");
+                        $state.go("ai.list");
                     }
                 });
             }
@@ -48,13 +48,13 @@ angular.module("app").controller("aiContentCtrl", function ($scope, aiContentSer
         if (confirm('Are you sure to delete?')) {
             aiContentService.deleteAiContent(id).success(function (data) {
                 if (data == "deleted") {
-                    $state.go("aicontents", {}, {reload: true});
+                    $state.go("ai.list", {}, {reload: true});
                 }
             });
         }
     };
 
-    if ($state.current.name == "edit") {
+    if ($state.current.name == "ai.edit") {
         var id = $stateParams.id;        
         aiContentService.getAiContent(id).then(function (response) {
             $scope.aiContent = response.data;

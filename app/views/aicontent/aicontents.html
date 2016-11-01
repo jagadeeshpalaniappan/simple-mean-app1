@@ -1,4 +1,4 @@
-<h2>AI -Content List</h2>
+<h2>AI -Contents</h2>
 
 
 <!--
@@ -24,9 +24,9 @@
 -->
 
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-10">
 
-        <a ui-sref="create" class="btn btn-primary pull-right">
+        <a ui-sref="ai.create" class="btn btn-primary pull-right">
             <span class="glyphicon glyphicon-plus"></span> &nbsp; Add Content
         </a>
         <br/>
@@ -38,7 +38,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-10">
 
 
         <div class="panel panel-white post panel-shadow" ng-repeat="aiContent in aiContents">
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="pull-right">
-                    <a ui-sref="edit({id:aiContent._id})">Edit</a> |
+                    <a ui-sref="ai.edit({id:aiContent._id})">Edit</a> |
                     <a href="#" ng-click="deleteAiContent(aiContent._id)">Delete</a>
                 </div>
             </div>

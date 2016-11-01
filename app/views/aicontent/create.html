@@ -1,46 +1,57 @@
-<h2 ng-show="aiContent._id">Edit</h2>
-<h2 ng-hide="aiContent._id">Create</h2>
+<div class="container main-container">
 
-<form name="aiContentForm" ng-submit="saveData(aiContent)" novalidate class="form-horizontal">
-    <div class="form-group">
-        <label class="col-md-2">Name</label>
+    <h3 ng-show="aiContent._id">Edit</h3>
 
-        <div class="col-md-10">
-            <input type="text" ng-model="aiContent.name" name="name" ng-required="true" class="form-control" />
+    <h3 ng-hide="aiContent._id">Create</h3>
 
-            <p ng-show="aiContentForm.name.$error.required && (IsSubmit || aiContentForm.name.$dirty)" class="text-danger">Please Enter Name</p>
+    <form name="aiContentForm" ng-submit="saveData(aiContent)" novalidate class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2">Name</label>
+
+            <div class="col-md-10">
+                <input type="text" ng-model="aiContent.name" name="name" ng-required="true" class="form-control"/>
+
+                <p ng-show="aiContentForm.name.$error.required && (IsSubmit || aiContentForm.name.$dirty)"
+                   class="text-danger">Please Enter Name</p>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <label class="col-md-2">Keywords</label>
+        <div class="form-group">
+            <label class="col-md-2">Keywords</label>
 
-        <div class="col-md-10">
-            <!--<input type="text" ng-model="aiContent.keywords" name="keywords" ng-required="true" class="form-control" />-->
+            <div class="col-md-10">
+                <!--<input type="text" ng-model="aiContent.keywords" name="keywords" ng-required="true" class="form-control" />-->
 
-            <tags-input ng-model="aiContent.keywords" replace-spaces-with-dashes="false" class="jtag"  placeholder="Add Keywords (Press Enter)" ></tags-input>
+                <tags-input ng-model="aiContent.keywords" replace-spaces-with-dashes="false" class="jtag"
+                            placeholder="Add Keywords (Press Enter)"></tags-input>
 
-            <p ng-show="aiContentForm.name.$error.required && (IsSubmit || aiContentForm.name.$dirty)" class="text-danger">Please enter Keywords</p>
+                <p ng-show="aiContentForm.name.$error.required && (IsSubmit || aiContentForm.name.$dirty)"
+                   class="text-danger">Please enter Keywords</p>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <label class="col-md-2">Content</label>
+        <div class="form-group">
+            <label class="col-md-2">Content</label>
 
-        <div class="col-md-10">
-            <textarea name="content" ng-model="aiContent.content" ng-required="true" class="form-control" rows="8"></textarea>
+            <div class="col-md-10">
+                <textarea name="content" ng-model="aiContent.content" ng-required="true" class="form-control"
+                          rows="8"></textarea>
 
-            <p ng-show="aiContentForm.content.$error.required && (IsSubmit || aiContentForm.name.$dirty)" class="text-danger">
-                Please Enter Content</p>
+                <p ng-show="aiContentForm.content.$error.required && (IsSubmit || aiContentForm.name.$dirty)"
+                   class="text-danger">
+                    Please Enter Content</p>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10 text-right">
-            <a ui-sref="aicontents" class="btn btn-default">Cancel</a>
-            <input type="submit" value="Update" class="btn btn-primary" ng-show="aiContent._id" />
-            <input type="submit" value="Save" class="btn btn-primary" ng-hide="aiContent._id" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <a ui-sref="ai.list" class="btn btn-default">Cancel</a>
+                <input type="submit" value="Update" class="btn btn-primary" ng-show="aiContent._id"/>
+                <input type="submit" value="Save" class="btn btn-primary" ng-hide="aiContent._id"/>
 
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+
+
+</div>
