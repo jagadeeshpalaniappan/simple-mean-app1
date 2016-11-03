@@ -25,8 +25,7 @@
                 <tags-input ng-model="aiContent.keywords" replace-spaces-with-dashes="false" class="jtag"
                             placeholder="Add Keywords (Press Enter)"></tags-input>
 
-                <p ng-show="aiContentForm.name.$error.required && (IsSubmit || aiContentForm.name.$dirty)"
-                   class="text-danger">Please enter Keywords</p>
+
             </div>
         </div>
 
@@ -37,7 +36,7 @@
                 <textarea name="content" ng-model="aiContent.content" ng-required="true" class="form-control"
                           rows="8"></textarea>
 
-                <p ng-show="aiContentForm.content.$error.required && (IsSubmit || aiContentForm.name.$dirty)"
+                <p ng-show="aiContentForm.content.$error.required && (IsSubmit || aiContentForm.content.$dirty)"
                    class="text-danger">
                     Please Enter Content</p>
             </div>

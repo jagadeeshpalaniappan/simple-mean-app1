@@ -603,7 +603,7 @@ a:hover {
 	border-radius: 2px 2px 2px 2px;
 	-moz-border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
-	min-height: 768px;
+	/*min-height: 768px;*/
 	padding: 0 20px 75px 20px;
 	margin-bottom: 70px;
 }
